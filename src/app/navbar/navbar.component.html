@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- ロゴ -->
+  <a class="navbar-brand" href="#">
+    <img
+      src="../../assets/logomark.png"
+      width="50"
+      height="50"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    <img
+      src="../../assets/logo.png"
+      width="150"
+      height="50"
+      class="d-inline-block align-top"
+      alt=""
+    />
+  </a>
+  <!-- タイトル -->
+  <a class="navbar-brand">RobohanWebSystem ver{{ version }}</a>
+
+  <!-- コンテンツ -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- Home -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"
+          >Home <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <!-- collapse -->
+      <li class="nav-item dropdown">
+        <!-- 先頭 -->
+        <a
+          class="nav-link dropdown-toggle"
+          routerLink="/"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          ROSTools
+        </a>
+        <!-- ドロップダウンで表示されるコンテンツ群 -->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/ros">TOP</a>
+          <div class="dropdown-divider"></div>
+          <!-- TODO: Joycontrollerのcomponent作る -->
+          <a class="dropdown-item" href="#">Joy Controller</a>
+          <!-- TODO: navigationのcomponent作る -->
+          <a class="dropdown-item" href="#">Navigation</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

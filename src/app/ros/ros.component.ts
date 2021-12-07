@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { String, RoslibService } from '../ros.service';
+import { String, RoslibService } from './ros.service';
 @Component({
   selector: 'app-ros',
   templateUrl: './ros.component.html',
