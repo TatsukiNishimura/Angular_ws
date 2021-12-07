@@ -1,20 +1,26 @@
-<h1 class="text-center">chat test</h1>
-<p>Connected : {{ this.connected }}</p>
-<p>Message : {{ this.message }}</p>
-<form>
-  <label
-    >message To publish:
-    <input #msg />
-  </label>
-  <br />
-  <button type="button" (click)="publishMsg(msg.value)" class="btn btn-primary">
-    publish
-  </button>
-  <button
-    type="button"
-    (click)="publishMsg('clear'); msg.value = ''"
-    class="btn btn-secondary"
-  >
-    clear
-  </button>
-</form>
+<div [style.background-color]="bgcolor">
+  <h1 class="text-center">chat test</h1>
+  <p>Connected : {{ this.connected }}</p>
+  <p>Message : {{ this.message }}</p>
+  <form>
+    <label
+      >message To publish:
+      <input #msg />
+    </label>
+    <br />
+    <button
+      type="button"
+      (click)="publishMsg(msg.value)"
+      class="btn btn-primary"
+    >
+      publish
+    </button>
+    <button
+      type="button"
+      (click)="publishMsg('clear'); msg.value = ''"
+      class="btn btn-secondary"
+    >
+      clear
+    </button>
+  </form>
+</div>

@@ -11,8 +11,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 
+import { NgJoystickModule } from 'ng-joystick';
+import { JoystickComponent } from './ros/joystick/joystick.component';
+
 @NgModule({
-  declarations: [AppComponent, RosComponent, NavbarComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    RosComponent,
+    NavbarComponent,
+    HomeComponent,
+    JoystickComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     NgbModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    NgJoystickModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

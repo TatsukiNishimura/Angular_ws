@@ -28,6 +28,8 @@
     "@ng-bootstrap/ng-bootstrap": "^8.0.4",
     "bootstrap": "^4.5.0",
     "jquery": "^3.6.0",
+    "ng-joystick": "^0.0.8",
+    "ngx-joystick": "^1.0.3",
     "popper.js": "^1.16.1",
     "roslib": "^1.1.0",
     "rxjs": "~6.6.0",

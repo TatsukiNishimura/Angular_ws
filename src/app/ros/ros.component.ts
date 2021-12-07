@@ -7,7 +7,7 @@ import { String, RoslibService } from './ros.service';
 })
 export class RosComponent implements OnInit {
   title = 'ng-roslib';
-
+  bgcolor = '#deeaf7';
   active = 1;
   connected = false;
   message = '';
@@ -23,6 +23,11 @@ export class RosComponent implements OnInit {
   }
   publishMsg(msg: string): void {
     console.log(msg);
+    if (msg.indexOf('R18') > -1) {
+      this.bgcolor = '#FFC0CB';
+    } else {
+      this.bgcolor = '#deeaf7';
+    }
     this.roslibService.publish(msg);
   }
   ngOnInit(): void {}

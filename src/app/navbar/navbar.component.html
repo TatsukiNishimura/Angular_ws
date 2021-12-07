@@ -1,57 +1,59 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <!-- ロゴ -->
-  <a class="navbar-brand" href="#">
-    <img
-      src="../../assets/logomark.png"
-      width="50"
-      height="50"
-      class="d-inline-block align-top"
-      alt=""
-    />
-    <img
-      src="../../assets/logo.png"
-      width="150"
-      height="50"
-      class="d-inline-block align-top"
-      alt=""
-    />
-  </a>
-  <!-- タイトル -->
-  <a class="navbar-brand">RobohanWebSystem ver{{ version }}</a>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="../../assets/logomark.png"
+        width="50"
+        height="50"
+        class="d-inline-block align-top"
+        alt=""
+      />
+      <img
+        src="../../assets/logo.png"
+        width="150"
+        height="50"
+        class="d-inline-block align-top"
+        alt=""
+      />
+    </a>
+    <!-- タイトル -->
+    <a class="navbar-brand">RobohanWebSystem ver{{ version }}</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- コンテンツ -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <!-- Home -->
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/"
-          >Home <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <!-- collapse -->
-      <li class="nav-item dropdown">
-        <!-- 先頭 -->
-        <a
-          class="nav-link dropdown-toggle"
-          routerLink="/"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          ROSTools
-        </a>
-        <!-- ドロップダウンで表示されるコンテンツ群 -->
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/ros">TOP</a>
-          <div class="dropdown-divider"></div>
-          <!-- TODO: Joycontrollerのcomponent作る -->
-          <a class="dropdown-item" href="#">Joy Controller</a>
-          <!-- TODO: navigationのcomponent作る -->
-          <a class="dropdown-item" href="#">Navigation</a>
-        </div>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            ROSTools
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/ros">TOP</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="/joystick">joystick</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
