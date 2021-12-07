@@ -18,7 +18,7 @@ export class RoslibService {
   private _error: Subject<boolean> = new Subject<boolean>();
   private _chat = new Subject<String>();
   private _topic?: ROSLIB.Topic;
-  private roscoreIp: string = '127.0.0.1';
+  private roscoreIp: string = '192.168.11.46';
 
   constructor() {
     this._connected.next(false);
@@ -31,6 +31,7 @@ export class RoslibService {
       console.log('connected');
       this.subscribeToTopics();
       this.publishMsgToTopics();
+      // this.publishJoyToTopics();
     });
     this._ros.on('error', (error: any) => {
       this._error.next(true);
@@ -89,7 +90,7 @@ export class RoslibService {
    *
    * @memberof RoslibService
    */
-  publishMsgToTopics(): void {
+  private publishMsgToTopics(): void {
     this._topic = new ROSLIB.Topic({
       ros: this._ros,
       name: '/Angular_Ros_msg',
@@ -97,6 +98,23 @@ export class RoslibService {
     });
   }
 
+  private publishJoyToTopics(): void {
+    this._topic = new ROSLIB.Topic({
+      ros: this._ros,
+      name: '/unsignedCharUDP',
+      messageType: 'robohan_common/unsignedCharData',
+    });
+  }
+
+  publishJoy(data: number[]): void {
+    this._topic.publish(
+      new ROSLIB.Message({
+        variety: 3,
+        data: data,
+      })
+    );
+    console.log(data);
+  }
   /**
    *
    *

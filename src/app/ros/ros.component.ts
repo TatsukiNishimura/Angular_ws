@@ -11,7 +11,7 @@ export class RosComponent implements OnInit {
   active = 1;
   connected = false;
   message = '';
-
+  chiika: boolean = false;
   constructor(private roslibService: RoslibService) {
     this.roslibService.chat.subscribe((msg: String) => {
       this.message = msg.data;
@@ -19,13 +19,14 @@ export class RosComponent implements OnInit {
     this.roslibService.connected.subscribe((connected: boolean) => {
       this.connected = connected;
     });
-    this.roslibService.publishMsgToTopics();
   }
   publishMsg(msg: string): void {
     console.log(msg);
-    if (msg.indexOf('R18') > -1) {
+    if (msg.indexOf('R18') > -1 || msg.indexOf('r18') > -1) {
       this.bgcolor = '#FFC0CB';
+      this.chiika = true;
     } else {
+      this.chiika = false;
       this.bgcolor = '#deeaf7';
     }
     this.roslibService.publish(msg);
